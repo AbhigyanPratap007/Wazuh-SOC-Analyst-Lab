@@ -94,143 +94,31 @@ Confirmed active event forwarding from Windows to Wazuh Manager.
 
 
 
-🧠 Event Simulation and Collection
-
-Simulated Attack Behaviors
-
-
-
-To replicate real-world attacker activity, multiple user and system actions were simulated on the Windows endpoint:
-
-
-
-Multiple failed login attempts (Event ID 4625)
-
-
-
-Successful logins (Event ID 4624)
-
-
-
-New user creation (Event ID 4720)
-
-
-
-User account deletion (Event ID 4726)
-
-
-
-Privilege escalation (Event ID 4732 – user added to admin group)
-
-
-
-Audit log clearing (Event ID 1102)
-
-
-
-These actions mimic typical brute-force, privilege escalation, and defense evasion stages in the ATT\&CK chain.
-
-
-
-Log Verification
-
-
-
-Monitored incoming events on Wazuh via:
-
-
-
-/var/ossec/logs/alerts/alerts.log
-
-/var/ossec/logs/ossec.log
-
-
-
-
-
-Confirmed receipt of Windows security events under Wazuh’s eventchannel source.
-
-
-
-Verified rule matching and event parsing via the Wazuh Dashboard.
-
-
-
-🧩 MITRE ATT\&CK Mapping
-
-Event ID	Action Simulated	MITRE Technique	Tactic
-
-4625	Failed logon	T1110 – Brute Force	Credential Access
-
-4624	Successful logon	T1078 – Valid Accounts	Initial Access
-
-4720	Account creation	T1136 – Create Account	Persistence
-
-4726	Account deletion	T1531 – Account Deletion	Defense Evasion
-
-4732	Privilege escalation	T1078 / T1069 – Privileged Group Modification	Privilege Escalation
-
-1102	Audit log cleared	T1070.001 – Clear Windows Event Logs	Defense Evasion
-
-🧾 Results
-
-
-
-✅ Successfully established real-time event forwarding between Windows and Wazuh Manager.
-
-
-
-✅ Captured and analyzed over 50+ security event logs tied to authentication and user management activity.
-
-
-
-✅ Mapped detections to MITRE ATT\&CK techniques, aligning with blue-team defensive monitoring practices.
-
-
-
-✅ Built a reproducible mini SOC lab foundation for endpoint detection and log analysis.
-
-
-
-🛠️ Tools and Technologies
-
-
-
-Wazuh Manager 4.9.2 (Ubuntu)
-
-
-
-Wazuh Agent (Windows)
-
-
-
-Windows Event Viewer
-
-
-
-Syslog \& Auth Logs
-
-
-
-MITRE ATT\&CK Framework
-
-
-
-📈 Outcome
-
-
-
-This setup provided a functional, testable SOC simulation that demonstrates the end-to-end flow of:
-
-
-
-Endpoint event generation
-
-
-
-Log forwarding
-
-
-
-Rule-based detection and analysis
-
+## 🧩 Key Objectives
+- Deploy Wazuh manager and agent to simulate a functional SOC environment  
+- Collect Windows Security Logs (Event IDs: 4624, 4625, 4726, 4732, etc.)  
+- Simulate attacker actions such as:
+  - Failed logins and brute-force attempts  
+  - Account deletions and privilege escalations  
+  - Audit log clearing activities  
+- Map all detections to **MITRE ATT&CK** techniques  
+
+---
+
+## 🔍 Detection Scenarios
+- **Brute Force (4625)** — Multiple failed logons detected  
+- **Successful Logon (4624)** — Followed by privilege escalation activity  
+- **Account Deletion (4726)** — Potential insider threat simulation  
+- **Audit Log Clearing (1102)** — Indicator of log tampering  
+
+Each detection was analyzed through Wazuh dashboards, alert logs, and rule correlation.
+
+---
+
+## 📊 Results
+- **10+ attacker behaviors** successfully simulated  
+- **50+ Windows event logs** analyzed  
+- **MITRE Mapping Examples**:
+  - T1110 — Brute Force  
+  - T1078 — Valid Accounts  
+  - T1070 — Indicator Removal on Host  
