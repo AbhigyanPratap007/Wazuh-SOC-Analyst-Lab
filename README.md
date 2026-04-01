@@ -1,9 +1,9 @@
-Wazuh Windows Detection Lab
+**Wazuh Windows Detection Lab**
 Objective
 
 Simulate real-world attacker behaviours on a Windows endpoint and validate detection capabilities using Wazuh SIEM, with a focus on authentication, privilege escalation, and defence evasion.
 
-Lab Setup
+**Lab Setup**
 Wazuh Manager: Ubuntu
 Endpoint: Windows 10
 Log Source: Windows Security Event Logs
