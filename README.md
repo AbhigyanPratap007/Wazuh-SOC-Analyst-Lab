@@ -101,8 +101,11 @@ Ability to refine detections and reduce false positives.
 **Key Findings**
 
 Windows authentication logs generate high volumes of events, requiring filtering
+
 Failed logins alone create noise; correlation improves detection quality
+
 Privilege escalation and log clearing are high-confidence attacker behaviours
+
 Wazuh rules can be customised to detect behavioural patterns
 
 **What Worked Well**
@@ -112,29 +115,24 @@ Accurate detection of all simulated attack scenarios
 Custom rule creation for brute-force detection
 Validation of detections using real event data
 
-**Limitations**
-
-No correlation rule implemented yet (4625 → 4624)
-Testing limited to a single endpoint
-No integration with external threat intelligence or EDR
-
 **Future Improvements**
 
 Build correlation rule for failed logins followed by success
+
 Expand telemetry to include PowerShell and process execution events
+
 Integrate MITRE ATT&CK mapping more systematically
+
 Test across multiple endpoints for scalability
-MITRE ATT&CK Mapping (High-Level)
-T1110 – Brute Force: Failed logon attempts
-T1078 – Valid Accounts: Successful login
-T1098 – Account Manipulation: Privilege escalation
-T1070.001 – Clear Windows Event Logs: Log clearing
 
 **MITRE ATT&CK Mapping**
 
 T1110 – Brute Force → Failed logon attempts
+
 T1078 – Valid Accounts → Successful login
+
 T1098 – Account Manipulation → Privilege escalation
+
 T1070.001 – Clear Windows Event Logs → Log clearing
 
 
