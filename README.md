@@ -92,3 +92,7 @@ T1070.001 – Clear Windows Event Logs → Log clearing
 
 Conclusion
 This lab demonstrates practical SOC-level skills including log analysis, attack simulation, and detection engineering using Wazuh. It highlights the transition from basic event monitoring to behaviour-based detection, which is critical for real-world security operations.
+
+## Project Report
+
+View the full project report (PDF)(./docs/Wazuh-SOC-Analyst-Report.pdf)
