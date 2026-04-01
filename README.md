@@ -130,6 +130,14 @@ T1078 – Valid Accounts: Successful login
 T1098 – Account Manipulation: Privilege escalation
 T1070.001 – Clear Windows Event Logs: Log clearing
 
+**MITRE ATT&CK Mapping**
+
+T1110 – Brute Force → Failed logon attempts
+T1078 – Valid Accounts → Successful login
+T1098 – Account Manipulation → Privilege escalation
+T1070.001 – Clear Windows Event Logs → Log clearing
+
+
 **Conclusion**
 
 This lab demonstrates practical SOC-level skills in log analysis, attack simulation, and detection engineering using Wazuh. It shows progression from basic event monitoring to behaviour-based detection, which is essential in real-world security operations.
